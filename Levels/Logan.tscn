@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://20otq3xvxy6"]
+[gd_scene load_steps=8 format=3 uid="uid://20otq3xvxy6"]
 
 [ext_resource type="Texture2D" uid="uid://dobhocnekj0be" path="res://Assets/Sprites/TileSheet.png" id="1_e120x"]
 [ext_resource type="PackedScene" uid="uid://cqcqmwtl7erc5" path="res://Prefabs/player.tscn" id="2_v8fes"]
 [ext_resource type="Script" uid="uid://ddhxg3ov0esea" path="res://Scripts/Player.cs" id="3_am1e7"]
+[ext_resource type="Script" uid="uid://o2xrkll4ynen" path="res://Scripts/Wand.cs" id="4_5kx1i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8fes"]
 texture = ExtResource("1_e120x")
@@ -55,8 +56,6 @@ scale = Vector2(0.25, 0.25)
 script = ExtResource("3_am1e7")
 _movementSpeed = 100
 
-[node name="Wand" type="Node2D" parent="Player"]
-
 [node name="Body" parent="Player" instance=ExtResource("2_v8fes")]
 
 [node name="Direction" parent="Player/Body" index="0"]
@@ -65,10 +64,11 @@ scale = Vector2(0.5, 1)
 
 [node name="Sprite2D" parent="Player/Body/Direction" index="0"]
 position = Vector2(-8.5508213e-07, 1.9073486e-06)
-rotation = -11.55408
-scale = Vector2(7, 5)
 
 [node name="Sprite2D" parent="Player/Body" index="1"]
 texture_filter = 1
+
+[node name="Wand" type="Node2D" parent="Player"]
+script = ExtResource("4_5kx1i")
 
 [editable path="Player/Body"]

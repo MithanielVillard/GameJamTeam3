@@ -9,59 +9,105 @@ public partial class Player : Node2D
 	[Export]private int _health = 100;
 	[Export]private int _luck = 15;
 	[Export]private int _defense = 50;
-	[Export]private int _attackSpeed = 2;
+	[Export]private float _attackSpeed = 2;
 	[Export]private int _movementSpeed = 10;
+
+	private float lastTimeFired = 0;
+	private float processedAttackSpeed = 0;
+	private bool _isTryingFire;
 	
 	private PlayerMovement _movementScript;
+	private Wand _playerwand;
 	
 	public override void _Ready()
 	{
-		
 		_movementScript = this.GetChild<PlayerMovement>(0);
 		_movementScript.SetMovementSpeed(_movementSpeed);
+		
+		_playerwand = this.GetChild<Wand>(1);
+
+		ProccesAttackSpeed();
+	}
+	
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("Attack"))
+		{
+			_isTryingFire =  true;
+		}
+		else if (@event.IsActionReleased("Attack"))
+		{
+			_isTryingFire =  false;
+		}
 	}
 
-	public void SetPlayerStats(Stats stats, StatsOperator statsoperator, StatsOperationUnit operatorunit, int value)
+	public void TryFireProjectile()
 	{
+		if( (float)Time.GetTicksMsec() >= lastTimeFired + processedAttackSpeed)
+		{
+			_playerwand.OnFireProjectile();
+			lastTimeFired = (float)Time.GetTicksMsec();
+		}
+	}
+	
+	public override void _Process(double delta)
+	{
+		if (_isTryingFire)
+		{
+			TryFireProjectile();
+		}
+	}
+
+	public void ProccesAttackSpeed()
+	{
+		if (_attackSpeed == 0)
+		{
+			_attackSpeed = 0.0001f;
+		}
 		
-		
+		processedAttackSpeed = 1000 / _attackSpeed;
+	}
+	
+	public void SetPlayerStats(StatsPlayer stats, StatsOperator statsoperator, StatsOperationUnit operatorunit, float value)
+	{
 		switch (stats)
 		{
-			case Stats.HEALTH_REGEN:
-				_healthRegen = ApplyOperator(statsoperator,operatorunit, value,_healthRegen);
+			case StatsPlayer.HEALTH_REGEN:
+				_healthRegen = (int)ApplyOperator(statsoperator,operatorunit, value,(float)_healthRegen);
 				break;
 			
-			case Stats.MAX_HEALTH:
-				_maxHealth = ApplyOperator(statsoperator,operatorunit, value,_maxHealth);
+			case StatsPlayer.MAX_HEALTH:
+				_maxHealth = (int)ApplyOperator(statsoperator,operatorunit, value,(float)_maxHealth);
 				break;
 			
-			case Stats.HEALTH:
-				_health = ApplyOperator(statsoperator,operatorunit, value,_health);
+			case StatsPlayer.HEALTH:
+				_health = (int)ApplyOperator(statsoperator,operatorunit, value,(float)_health);
 				break;
 			
-			case Stats.LUCK:
-				_luck = ApplyOperator(statsoperator,operatorunit, value,_luck);
+			case StatsPlayer.LUCK:
+				_luck = (int)ApplyOperator(statsoperator,operatorunit, value,(float)_luck);
 				break;
 			
-			case Stats.DEFENSE:
-				_defense = ApplyOperator(statsoperator,operatorunit, value,_defense);
+			case StatsPlayer.DEFENSE:
+				_defense = (int)ApplyOperator(statsoperator,operatorunit, value,(float)_defense);
 				break;
 			
-			case Stats.ATTACK_SPEED:
+			case StatsPlayer.ATTACK_SPEED:
 				_attackSpeed = ApplyOperator(statsoperator,operatorunit, value,_attackSpeed);
+				ProccesAttackSpeed();
 				break;
 			
-			case  Stats.MOVEMENT_SPEED:
-				_movementSpeed = ApplyOperator(statsoperator,operatorunit, value,_movementSpeed);
+			case StatsPlayer.MOVEMENT_SPEED:
+				_movementSpeed = (int)ApplyOperator(statsoperator,operatorunit, value,(float)_movementSpeed);
 				_movementScript.SetMovementSpeed(_movementSpeed);
 				break;
 		}
 	}
 
-	public int ApplyOperator(StatsOperator statsoperator,StatsOperationUnit operatorunit, int value, int baseValue)
+	public float ApplyOperator(StatsOperator statsoperator,StatsOperationUnit operatorunit, float value, float baseValue)
 	{
-		int result = 0;
-		int valuetooperate = value;
+		float result = 0;
+		float valuetooperate = value;
 		
 		if (operatorunit == StatsOperationUnit.PERCENTAGE)
 		{
@@ -84,8 +130,6 @@ public partial class Player : Node2D
 				break;
 			
 		}
-		
-		
 		return result;
 	}
 }
