@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://c7yuc6r8jgora"]
+[gd_scene load_steps=2 format=3 uid="uid://c7yuc6r8jgora"]
+
+[ext_resource type="PackedScene" uid="uid://bnebhmruslhd8" path="res://Prefabs/Tooltip.tscn" id="1_2yxh4"]
 
 [node name="Mithaniel" type="Node2D"]
+
+[node name="PanelContainer" parent="." instance=ExtResource("1_2yxh4")]
+Title = "test"

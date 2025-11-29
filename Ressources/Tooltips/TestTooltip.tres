@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://ciljj6njr5q7"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_dsaj5"]
+
+[resource]
+script = ExtResource("1_dsaj5")
+Title = "Titre"
+Description = "Description"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"
