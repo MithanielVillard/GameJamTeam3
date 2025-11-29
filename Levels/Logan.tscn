@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://20otq3xvxy6"]
+[gd_scene load_steps=2 format=3 uid="uid://20otq3xvxy6"]
+
+[sub_resource type="TileSet" id="TileSet_8yd3q"]
+tile_shape = 1
+tile_size = Vector2i(64, 32)
 
 [node name="Logan" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8yd3q")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
