@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=2 format=3 uid="uid://dpkstmlwi3dgh"]
+
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_8jaql"]
+
+[resource]
+script = ExtResource("1_8jaql")
+Name = "Enchant example"
+CardStatEffects = null
+metadata/_custom_type_script = "uid://bgrl57kb67hht"
