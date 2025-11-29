@@ -3,9 +3,15 @@ using System;
 
 public partial class PlayerMovement : CharacterBody2D
 {
-	public const float Speed = 60.0f;
+	public float ActualSpeed = 60.0f;
+
 
 	
+	
+	public void SetMovementSpeed(float speed)
+	{
+		ActualSpeed = speed;
+	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
@@ -13,7 +19,7 @@ public partial class PlayerMovement : CharacterBody2D
 
 		if (direction != Vector2.Zero)
 		{
-			this.Velocity = direction * Speed;
+			this.Velocity = direction.Normalized() * ActualSpeed;
 		}
 		else
 		{

@@ -1,16 +1,20 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
-public partial class Orientation : Node
+public partial class Orientation : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
+
+	private Sprite2D arrow;
+
 	public override void _Ready()
 	{
+		arrow = this.GetChild<Sprite2D>(0);
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 	public override void _Process(double delta)
 	{
-		
+		arrow.LookAt(GetGlobalMousePosition());
 	}
+
 }
