@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJamTeam3"
+run/main_scene="uid://bmekld0vdq3ly"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -26,3 +27,26 @@ window/vsync/vsync_mode=0
 [dotnet]
 
 project/assembly_name="GameJamTeam3"
+
+[input]
+
+Up={
+"deadzone": 0.2,
+"events": []
+}
+Left={
+"deadzone": 0.2,
+"events": []
+}
+Down={
+"deadzone": 0.2,
+"events": []
+}
+Right={
+"deadzone": 0.2,
+"events": []
+}
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
