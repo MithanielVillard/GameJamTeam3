@@ -1,6 +1,0 @@
-[gd_resource type="Resource" format=3 uid="uid://dsu2kxuajl8mm"]
-
-[resource]
-metadata/topPosition = PackedVector2Array()
-metadata/leftPosition = PackedVector2Array()
-metadata/bottomPosition = PackedVector2Array()
