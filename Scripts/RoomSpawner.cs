@@ -56,8 +56,8 @@ public partial class RoomSpawner : Node2D
 		
 		// Place Exit and Enter Tiles
 		
-		room.PlaceExitTile( direction * 4, direction, 2 );
-		existing.PlaceExitTile( direction * -4, -direction, 2 );
+		room.PlaceExitTile( direction * 4, direction, 3 );
+		existing.PlaceExitTile( direction * -4, -direction, 3 );
 		
 		// Free this Room Spawner
 		

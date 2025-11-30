@@ -1,29 +1,92 @@
-[gd_scene load_steps=45 format=3 uid="uid://20otq3xvxy6"]
+[gd_scene load_steps=63 format=3 uid="uid://20otq3xvxy6"]
 
 [ext_resource type="Script" uid="uid://b677s27d7l0og" path="res://Scripts/Dungeon.cs" id="1_8yhr8"]
 [ext_resource type="PackedScene" uid="uid://cbw5ydyi61bku" path="res://Prefabs/Tiles/ocean.tscn" id="2_0unhq"]
 [ext_resource type="Script" uid="uid://b1tc51av0p7vs" path="res://Scripts/PlayerMovement.cs" id="3_6oblm"]
 [ext_resource type="Script" uid="uid://ddhxg3ov0esea" path="res://Scripts/Player.cs" id="3_am1e7"]
 [ext_resource type="Script" uid="uid://bqhdmntjv1uld" path="res://Scripts/Resources/ResourceRoom.cs" id="3_lvqou"]
-[ext_resource type="PackedScene" path="res://Prefabs/Tiles/lava-pond.tscn" id="3_mqdx1"]
+[ext_resource type="PackedScene" uid="uid://eeu22fvw46fq" path="res://Prefabs/Tiles/island.tscn" id="4_0unhq"]
 [ext_resource type="Script" uid="uid://o2xrkll4ynen" path="res://Scripts/Wand.cs" id="4_5kx1i"]
+[ext_resource type="PackedScene" uid="uid://fogj60m5qa58" path="res://Prefabs/Tiles/lava-horizontal-river.tscn" id="4_apgle"]
 [ext_resource type="PackedScene" uid="uid://bgfs10qkiql8n" path="res://Prefabs/Projectile.tscn" id="5_r7pyf"]
+[ext_resource type="PackedScene" uid="uid://m25xrushu3yu" path="res://Prefabs/Tiles/lava-ocean.tscn" id="6_cg8tl"]
 [ext_resource type="Script" uid="uid://cb3skw2u0862t" path="res://Scripts/Orientation.cs" id="6_y0iyu"]
+[ext_resource type="PackedScene" uid="uid://cxr10niuqjh36" path="res://Prefabs/Tiles/lava-vertical-river.tscn" id="7_75wlt"]
 [ext_resource type="Texture2D" uid="uid://cd4xj83kkuq0w" path="res://Assets/Sprites/dir.png" id="7_w5npr"]
 [ext_resource type="Texture2D" uid="uid://c6ym0h7gelhtj" path="res://Assets/Sprites/MC Animation.png" id="8_6oblm"]
+[ext_resource type="PackedScene" uid="uid://y3vgilaj2kfp" path="res://Prefabs/Tiles/water-horizontal-river.tscn" id="8_umd2h"]
+[ext_resource type="PackedScene" uid="uid://daolj63yvukqb" path="res://Prefabs/Tiles/water-vertical-river.tscn" id="9_ojpga"]
 [ext_resource type="Script" uid="uid://017pmyoak8d1" path="res://Assets/Sprites/PlayerAnimation.cs" id="9_y0iyu"]
+[ext_resource type="PackedScene" uid="uid://d2cjg4v2fju2u" path="res://Prefabs/Tiles/water-pond.tscn" id="10_0fjyh"]
 [ext_resource type="Script" uid="uid://d2mlfmo3jjyxq" path="res://Scripts/ArmsAnimation.cs" id="10_w5npr"]
+[ext_resource type="PackedScene" uid="uid://kv45plewouxc" path="res://Prefabs/Tiles/land.tscn" id="11_75wlt"]
 [ext_resource type="Script" uid="uid://beqy0oi4nfyxo" path="res://Scripts/CharacterScript.cs" id="12_mqdx1"]
+[ext_resource type="PackedScene" uid="uid://8374vbqnp2ww" path="res://Prefabs/Tiles/cave.tscn" id="12_umd2h"]
+[ext_resource type="PackedScene" uid="uid://bmfy2kj4weg63" path="res://Prefabs/Tiles/magmatic-cave.tscn" id="13_umd2h"]
 
 [sub_resource type="Resource" id="Resource_43o7i"]
 script = ExtResource("3_lvqou")
 prefab = ExtResource("2_0unhq")
-weight = 100
+weight = 50
 metadata/_custom_type_script = "uid://bqhdmntjv1uld"
 
 [sub_resource type="Resource" id="Resource_jpmqi"]
 script = ExtResource("3_lvqou")
-prefab = ExtResource("3_mqdx1")
+prefab = ExtResource("4_apgle")
+weight = 80
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_6bjmo"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("4_0unhq")
+weight = 70
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_pg6b5"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("6_cg8tl")
+weight = 40
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_ldaxq"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("7_75wlt")
+weight = 80
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_ft8jw"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("8_umd2h")
+weight = 100
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_r8ck5"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("9_ojpga")
+weight = 120
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_qp7hb"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("10_0fjyh")
+weight = 120
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_ojpga"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("11_75wlt")
+weight = 130
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_0fjyh"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("12_umd2h")
+weight = 140
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="Resource" id="Resource_tyj0y"]
+script = ExtResource("3_lvqou")
+prefab = ExtResource("13_umd2h")
 weight = 100
 metadata/_custom_type_script = "uid://bqhdmntjv1uld"
 
@@ -296,10 +359,7 @@ animations = [{
 
 [node name="Dungeon" type="Node2D" parent="."]
 script = ExtResource("1_8yhr8")
-ROOMS = Array[Object]([SubResource("Resource_43o7i"), SubResource("Resource_jpmqi")])
-
-[node name="Starting Tile" parent="Dungeon" instance=ExtResource("3_mqdx1")]
-firstRoom = true
+ROOMS = Array[Object]([SubResource("Resource_43o7i"), SubResource("Resource_jpmqi"), SubResource("Resource_6bjmo"), SubResource("Resource_pg6b5"), SubResource("Resource_ldaxq"), SubResource("Resource_ft8jw"), SubResource("Resource_r8ck5"), SubResource("Resource_qp7hb"), SubResource("Resource_ojpga"), SubResource("Resource_0fjyh"), SubResource("Resource_tyj0y")])
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(0, -32)
