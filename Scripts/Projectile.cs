@@ -3,7 +3,10 @@ using System;
 
 public partial class Projectile : Area2D
 {
+	
+	
 	private float _speed;
+	private int _damage;
 	
 	[Export]private PackedScene _VfxHit;
 	
@@ -14,7 +17,6 @@ public partial class Projectile : Area2D
 		if(shadow != null)
 			shadow.GlobalPosition += Vector2.Down * 15;
 
-		
 		BodyEntered += InstantiateHitVfx;
 	}
 
@@ -27,6 +29,10 @@ public partial class Projectile : Area2D
 	{
 		_speed = newspeed;
 	}
+	public void SetDamage(int damage)
+	{
+		_damage = damage;
+	}
 	
 	public void InstantiateHitVfx(Node2D body)
 	{
@@ -35,7 +41,15 @@ public partial class Projectile : Area2D
 		AnimatedSprite2D proj = _VfxHit.Instantiate<AnimatedSprite2D>();
 		proj.GlobalPosition = GlobalPosition;
 		GetTree().GetCurrentScene().AddChild(proj);
+
 		
 		QueueFree();
+		
+		if (body.GetParent<Enemy>() != null)
+		{
+			body.GetParent<Enemy>().ReceiveDamage(_damage);
+		}
+			
+		
 	}
 }

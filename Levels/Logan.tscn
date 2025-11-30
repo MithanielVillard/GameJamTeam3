@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://20otq3xvxy6"]
+[gd_scene load_steps=47 format=3 uid="uid://20otq3xvxy6"]
 
 [ext_resource type="Texture2D" uid="uid://b0fvrrdfoptkw" path="res://Assets/Sprites/tilehigh.png" id="1_8yhr8"]
 [ext_resource type="Texture2D" uid="uid://dobhocnekj0be" path="res://Assets/Sprites/TileSheet.png" id="1_e120x"]
@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c6ym0h7gelhtj" path="res://Assets/Sprites/MC Animation.png" id="8_6oblm"]
 [ext_resource type="Script" uid="uid://017pmyoak8d1" path="res://Assets/Sprites/PlayerAnimation.cs" id="9_y0iyu"]
 [ext_resource type="Script" uid="uid://d2mlfmo3jjyxq" path="res://Scripts/ArmsAnimation.cs" id="10_w5npr"]
-[ext_resource type="Script" uid="uid://1lxh6vr77pyq" path="res://Scripts/PlayerEnchants.cs" id="12_mqdx1"]
+[ext_resource type="Script" uid="uid://od058mvxqv82" path="res://Scripts/Enemy.cs" id="12_lvqou"]
+[ext_resource type="Script" uid="uid://tt3mcd0mtw1p" path="res://Assets/Sprites/EnemyMovement.cs" id="13_0unhq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqdx1"]
 texture = ExtResource("1_8yhr8")
@@ -245,35 +246,35 @@ radius = 32.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75wlt"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(256, 0, 64, 64)
+region = Rect2(320, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg6b5"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(256, 64, 64, 64)
+region = Rect2(320, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldaxq"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(320, 0, 64, 64)
+region = Rect2(384, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8jw"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(320, 64, 64, 64)
+region = Rect2(384, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8ck5"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(384, 0, 64, 64)
+region = Rect2(448, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp7hb"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(384, 64, 64, 64)
+region = Rect2(448, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyj0y"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(448, 0, 64, 64)
+region = Rect2(256, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd2hg"]
 atlas = ExtResource("8_6oblm")
-region = Rect2(448, 64, 64, 64)
+region = Rect2(256, 48, 64, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8yhr8"]
 animations = [{
@@ -285,7 +286,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pg6b5")
 }],
 "loop": false,
-"name": &"Up",
+"name": &"Down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -296,7 +297,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ft8jw")
 }],
 "loop": false,
-"name": &"new_an",
+"name": &"Left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -307,7 +308,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qp7hb")
 }],
 "loop": false,
-"name": &"new_animation",
+"name": &"Right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -318,9 +319,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_qd2hg")
 }],
 "loop": false,
-"name": &"new_animation_1",
+"name": &"Up",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2l2d"]
 
 [node name="Logan" type="Node2D"]
 
@@ -355,6 +358,7 @@ script = ExtResource("3_6oblm")
 
 [node name="Wand" type="Node2D" parent="Player/Body"]
 script = ExtResource("4_5kx1i")
+_attackDamage = 25
 _projectileSpeed = 300
 _projectileScene = ExtResource("5_r7pyf")
 
@@ -389,6 +393,8 @@ scale = Vector2(5, 5)
 texture = ExtResource("7_w5npr")
 
 [node name="SpriteBody" type="AnimatedSprite2D" parent="Player/Body"]
+z_index = 50
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -15.999999)
 scale = Vector2(3.5, 3.5)
@@ -408,11 +414,22 @@ position = Vector2(0, 33)
 shape = SubResource("CircleShape2D_am1e7")
 
 [node name="Enemy" type="Node2D" parent="."]
+position = Vector2(0, -21)
+script = ExtResource("12_lvqou")
+_movementSpeed = 25
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Enemy"]
+position = Vector2(0, -7)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("13_0unhq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/CharacterBody2D"]
+texture_filter = 1
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_8yhr8")
-animation = &"new_animation_1"
-frame = 1
-frame_progress = 1.0
+animation = &"Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/CharacterBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_r2l2d")

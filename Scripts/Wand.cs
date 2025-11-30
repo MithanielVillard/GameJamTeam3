@@ -59,6 +59,7 @@ public partial class Wand : Node2D
 		Projectile proj = _projectileScene.Instantiate<Projectile>();
 		proj.GlobalPosition = GetChild<Node2D>(childIndex).GlobalPosition;
 		proj.SetSpeed(_projectileSpeed);
+		proj.SetDamage(_attackDamage);
 		proj.LookAt(GetGlobalMousePosition());
 		
 		GetTree().GetCurrentScene().AddChild(proj);

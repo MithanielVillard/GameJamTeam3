@@ -1,35 +1,47 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgfs10qkiql8n"]
 
-[ext_resource type="Script" path="res://Scripts/Projectile.cs" id="1_41gvk"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Projectile.atlastex" id="1_pqmk3"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Projectile2.atlastex" id="2_41gvk"]
-[ext_resource type="PackedScene" path="res://Prefabs/ExplosionProjectileHit.tscn" id="2_u4kxt"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Projectile3.atlastex" id="3_1vl50"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Projectile4.atlastex" id="4_k7eqe"]
-[ext_resource type="Script" path="res://Scripts/StartAnimationIdle.cs" id="6_1vl50"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Shadow.png" id="7_k7eqe"]
+[ext_resource type="Script" uid="uid://c4npexjg3tklm" path="res://Scripts/Projectile.cs" id="1_41gvk"]
+[ext_resource type="Texture2D" uid="uid://cerx4vq72vu2y" path="res://Assets/Sprites/Projectile.png" id="1_qjixt"]
+[ext_resource type="PackedScene" uid="uid://dke8bvhmfibpi" path="res://Prefabs/ExplosionProjectileHit.tscn" id="2_u4kxt"]
+[ext_resource type="Script" uid="uid://dpy2g3m5p703" path="res://Scripts/StartAnimationIdle.cs" id="6_1vl50"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b1lhm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1lhm"]
+atlas = ExtResource("1_qjixt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df8w1"]
+atlas = ExtResource("1_qjixt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqmk3"]
+atlas = ExtResource("1_qjixt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41gvk"]
+atlas = ExtResource("1_qjixt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vl50"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pqmk3")
+"texture": SubResource("AtlasTexture_b1lhm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_41gvk")
+"texture": SubResource("AtlasTexture_df8w1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_1vl50")
+"texture": SubResource("AtlasTexture_pqmk3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_k7eqe")
+"texture": SubResource("AtlasTexture_41gvk")
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pqmk3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjixt"]
 radius = 3.0
 
 [node name="Area2D" type="Area2D"]
@@ -38,15 +50,9 @@ _VfxHit = ExtResource("2_u4kxt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_b1lhm")
-frame_progress = 0.2670358
+sprite_frames = SubResource("SpriteFrames_1vl50")
+frame_progress = 0.67396665
 script = ExtResource("6_1vl50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_pqmk3")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("7_k7eqe")
-
-[connection signal="area_entered" from="." to="." method="InstantiateHitVfx"]
+shape = SubResource("CircleShape2D_qjixt")
