@@ -3,11 +3,12 @@
 importer="Aseprite Sprite2D Import"
 type="PackedScene"
 uid="uid://dxrpa1yhta7y6"
-valid=false
+path="res://.godot/imported/TileSheet.ase-181fa9ba81f8344c8ce64f6eb30ea9e0.scn"
 
 [deps]
 
 source_file="res://Assets/Sprites/TileSheet.ase"
+dest_files=["res://.godot/imported/TileSheet.ase-181fa9ba81f8344c8ce64f6eb30ea9e0.scn"]
 
 [params]
 

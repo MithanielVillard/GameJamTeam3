@@ -1,14 +1,7 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://dke8bvhmfibpi"]
 
 [ext_resource type="Texture2D" uid="uid://3hnku5ohavdd" path="res://Assets/Sprites/bOOM.png" id="2_eqoy0"]
 [ext_resource type="Script" uid="uid://dwvfsnyx21rtx" path="res://Scripts/VfxAnimated.cs" id="2_q7mpf"]
-=======
-[gd_scene load_steps=12 format=3 uid="uid://b4pq0hn73t1wt"]
-
-[ext_resource type="Texture2D" path="res://Assets/Sprites/bOOM.png" id="2_eqoy0"]
-[ext_resource type="Script" path="res://Scripts/VfxAnimated.cs" id="2_q7mpf"]
->>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqarh"]
 atlas = ExtResource("2_eqoy0")
