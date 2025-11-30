@@ -4,7 +4,6 @@ using System.Diagnostics;
 
 public partial class Orientation : Node2D
 {
-
 	private Sprite2D arrow;
 
 	public override void _Ready()

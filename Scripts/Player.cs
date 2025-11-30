@@ -19,12 +19,14 @@ public partial class Player : Node2D
 	private PlayerMovement _movementScript;
 	private Wand _playerwand;
 	
+	[Signal] public delegate void FireProjectileEventHandler();
+	
 	public override void _Ready()
 	{
-		_movementScript = this.GetChild<PlayerMovement>(0);
+		_movementScript = GetChild<PlayerMovement>(0);
 		_movementScript.SetMovementSpeed(_movementSpeed);
 		
-		_playerwand = this.GetChild<Wand>(1);
+		_playerwand = _movementScript.GetChild<Wand>(0);
 
 		ProccesAttackSpeed();
 	}
@@ -45,7 +47,7 @@ public partial class Player : Node2D
 	{
 		if( (float)Time.GetTicksMsec() >= lastTimeFired + processedAttackSpeed)
 		{
-			_playerwand.OnFireProjectile();
+			EmitSignal(SignalName.FireProjectile);
 			lastTimeFired = (float)Time.GetTicksMsec();
 		}
 	}

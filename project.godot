@@ -38,7 +38,7 @@ project/assembly_name="GameJamTeam3"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg")
+enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg", "res://addons/sprite_cutter/plugin.cfg")
 
 [input]
 

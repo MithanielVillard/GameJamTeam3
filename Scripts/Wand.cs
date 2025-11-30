@@ -3,17 +3,65 @@ using System;
 using System.Diagnostics;
 using GameJamTeam3.Scripts.Enums;
 
-
 public partial class Wand : Node2D
 {
-	[Export]private int _attackDamage = 40;
-	[Export]private int _projectileNumber = 1;
-	[Export]private int _projectileRange = 5;
-	[Export]private int _projectileSpeed = 5;
+	[Export]private int _attackDamage;
+	[Export]private int _projectileNumber;
+	[Export]private int _projectileRange;
+	[Export]private int _projectileSpeed;
+	
+	[Export]private PackedScene _projectileScene;
+	
+	private Player _player;
+	private PlayerMovement _playerMovement;
+	private int childIndex;
+	
+	public override void _Ready()
+	{
+		_playerMovement = GetParent<PlayerMovement>();
+		_player = _playerMovement.GetParent<Player>();
+
+		_playerMovement.MovementDirection += HandleDirection;
+		_player.FireProjectile += OnFireProjectile;
+		
+	}
+
+	private void HandleDirection(Vector2 dir)
+	{
+		switch (dir)
+		{
+			case (0,-1)://up
+				childIndex = 0;
+				break;
+			case (0,1)://down
+				childIndex = 1;
+				break;
+			case (1,0)://right
+				childIndex = 3;
+				break;
+			case (-1,0)://left
+				childIndex = 5;
+				break;
+			case (0,0):
+				if (childIndex == 3)
+				{
+					childIndex = 2;//far right
+				}else if (childIndex == 5)
+				{
+					childIndex = 4;//far left
+				}
+				break;
+		}
+	}
 	
 	public void OnFireProjectile()
 	{
-		Debug.Print("OnFireProjectile");
+		Projectile proj = _projectileScene.Instantiate<Projectile>();
+		proj.GlobalPosition = GetChild<Node2D>(childIndex).GlobalPosition;
+		proj.SetSpeed(_projectileSpeed);
+		proj.LookAt(GetGlobalMousePosition());
+		
+		GetTree().GetCurrentScene().AddChild(proj);
 	}
 	
 	public void SetWandStats(StatsWand stats, StatsOperator statsoperator, StatsOperationUnit operatorunit, int value)

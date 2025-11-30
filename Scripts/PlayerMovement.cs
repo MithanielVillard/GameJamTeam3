@@ -4,9 +4,10 @@ using System;
 public partial class PlayerMovement : CharacterBody2D
 {
 	public float ActualSpeed = 60.0f;
-
-
 	
+	private PlayerAnimation animationPlayer;
+	
+	[Signal] public delegate void MovementDirectionEventHandler(Vector2 dir);
 	
 	public void SetMovementSpeed(float speed)
 	{
@@ -26,7 +27,7 @@ public partial class PlayerMovement : CharacterBody2D
 			this.Velocity = Vector2.Zero;
 		}
 		
-		//GetParent<Player>().test();
+		EmitSignal(SignalName.MovementDirection,  direction);
 		
 		MoveAndSlide();
 	}

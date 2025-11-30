@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://m6wvj01jif6n"]
+
+[ext_resource type="Script" uid="uid://bxxqxcdayeuf5" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_obsy7"]
+[ext_resource type="Texture2D" uid="uid://cerx4vq72vu2y" path="res://Assets/Sprites/Projectile.png" id="2_xge1l"]
+
+[node name="AtlasScene" type="Node"]
+script = ExtResource("1_obsy7")
+destination_path = "res://Assets/Sprites"
+metadata/_custom_type_script = "uid://bxxqxcdayeuf5"
+
+[node name="Projectile" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-25, 0)
+texture = ExtResource("2_xge1l")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Projectile2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-13, 0)
+texture = ExtResource("2_xge1l")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="Projectile3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("2_xge1l")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="Projectile4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(14, -1)
+texture = ExtResource("2_xge1l")
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 32)
