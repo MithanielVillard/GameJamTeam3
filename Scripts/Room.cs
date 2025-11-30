@@ -14,10 +14,15 @@ public partial class Room : TileMapLayer
 		else SetModulate( new Color( Modulate.R, Modulate.G, Modulate.B, 0 ) );
 	}
 
-	public void PlaceExitTile( Vector2I position )
+	public void PlaceExitTile( Vector2I position, Vector2I direction, int distance )
 	{
 		position.X -= 1;
-		SetCell( position, 1, new Vector2I( 1, 0 ) );
+		Vector2I altasCoord = GetCellAtlasCoords( position );
+		for ( int i = 0; i < distance; i++ )
+		{
+			position += direction;
+			SetCell( position, 0, altasCoord );
+		}
 	}
 
 	public void FadeIn()

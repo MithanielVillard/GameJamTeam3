@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bmekld0vdq3ly"]
 
-[ext_resource type="PackedScene" uid="uid://cpru1wibojjkd" path="res://Prefabs/room-single.tscn" id="2_3v5t7"]
+[ext_resource type="PackedScene" uid="uid://cpru1wibojjkd" path="res://Prefabs/Tiles/lava-pond.tscn" id="2_3v5t7"]
 [ext_resource type="Script" uid="uid://b677s27d7l0og" path="res://Scripts/Dungeon.cs" id="2_gw5li"]
 [ext_resource type="Script" uid="uid://beqy0oi4nfyxo" path="res://Scripts/CharacterScript.cs" id="4_5o1px"]
 [ext_resource type="Script" uid="uid://bqhdmntjv1uld" path="res://Scripts/Resources/ResourceRoom.cs" id="4_lqcpu"]

@@ -27,7 +27,9 @@ public partial class PlayerMovement : CharacterBody2D
 
 		if (direction != Vector2.Zero)
 		{
-			Velocity = direction.Normalized() * ActualSpeed;
+			Vector2 movement = direction;
+			movement.Y /= 2;
+			Velocity = movement.Normalized() * ActualSpeed;
 			_player.EmitSignal(Player.SignalName.Move);
 		}
 		else
