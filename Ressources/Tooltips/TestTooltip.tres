@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_dsaj5")
 Title = "Titre"
-Description = "Description"
+Description = "Description [url=TestTooltip.tres]New Tooltip[/url]"
 metadata/_custom_type_script = "uid://djx0ml503gkyd"

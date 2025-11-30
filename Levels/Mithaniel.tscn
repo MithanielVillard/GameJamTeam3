@@ -1,8 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7yuc6r8jgora"]
 
-[ext_resource type="PackedScene" uid="uid://bnebhmruslhd8" path="res://Prefabs/Tooltip.tscn" id="1_2yxh4"]
+[ext_resource type="PackedScene" uid="uid://dhk71017nj7jf" path="res://Prefabs/Tooltip.tscn" id="1_2yxh4"]
 
 [node name="Mithaniel" type="Node2D"]
 
 [node name="PanelContainer" parent="." instance=ExtResource("1_2yxh4")]
-Title = "test"
+offset_left = 26.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 31.0
+Title = "(curse) wheelchair"
+Description = "Ceci est un test [url=TestTooltip.tres]CLICK ME[/url]            efefwefwec
+wecwecwec"

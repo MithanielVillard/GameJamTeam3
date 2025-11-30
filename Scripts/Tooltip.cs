@@ -7,12 +7,19 @@ public partial class Tooltip : Resource
 {
     [Export] public string Title { get; set; }
     [Export(PropertyHint.MultilineText)] public string Description { get; set; }
-    public TooltipScripts TooltipScene;
+    
+    private PackedScene _tooltipScene;
 
     public Tooltip()
     {
-        TooltipScene = GD.Load<TooltipScripts>("res://Prefabs/Tooltip.tscn");
-        TooltipScene.Title = Title;
-        TooltipScene.Description = Description;
+        _tooltipScene = GD.Load<PackedScene>("res://Prefabs/Tooltip.tscn");
+    }
+
+    public TooltipScripts CreateInstance()
+    {
+        TooltipScripts tooltip = _tooltipScene.Instantiate<TooltipScripts>();
+        tooltip.Title = Title;
+        tooltip.Description = Description;
+        return tooltip;
     }
 }
