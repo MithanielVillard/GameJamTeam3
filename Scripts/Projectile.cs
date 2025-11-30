@@ -9,6 +9,7 @@ public partial class Projectile : Area2D
 	private int _damage;
 	
 	[Export]private PackedScene _VfxHit;
+	[Export]private PackedScene _VfxMiss;
 	
 
 	public override void _Ready()
@@ -37,19 +38,22 @@ public partial class Projectile : Area2D
 	public void InstantiateHitVfx(Node2D body)
 	{
 		//if enemy hit
+		AnimatedSprite2D proj;
 		
-		AnimatedSprite2D proj = _VfxHit.Instantiate<AnimatedSprite2D>();
+		if (body.Name != "Enemy")
+		{
+			proj = _VfxMiss.Instantiate<AnimatedSprite2D>();
+			
+		}
+		else
+		{
+			body.GetParent<Enemy>().ReceiveDamage(_damage);
+			proj = _VfxHit.Instantiate<AnimatedSprite2D>();
+		}
+		
 		proj.GlobalPosition = GlobalPosition;
 		GetTree().GetCurrentScene().AddChild(proj);
 
-		
 		QueueFree();
-		
-		if (body.GetParent<Enemy>() != null)
-		{
-			body.GetParent<Enemy>().ReceiveDamage(_damage);
-		}
-			
-		
 	}
 }

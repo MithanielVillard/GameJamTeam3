@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgfs10qkiql8n"]
+[gd_scene load_steps=12 format=3 uid="uid://bgfs10qkiql8n"]
 
 [ext_resource type="Script" uid="uid://c4npexjg3tklm" path="res://Scripts/Projectile.cs" id="1_41gvk"]
 [ext_resource type="Texture2D" uid="uid://cerx4vq72vu2y" path="res://Assets/Sprites/Projectile.png" id="1_qjixt"]
-[ext_resource type="PackedScene" uid="uid://dke8bvhmfibpi" path="res://Prefabs/ExplosionProjectileHit.tscn" id="2_u4kxt"]
+[ext_resource type="PackedScene" uid="uid://dmsslyn45vb81" path="res://Prefabs/ExplosionProjectileHit.tscn" id="2_u4kxt"]
+[ext_resource type="PackedScene" uid="uid://dke8bvhmfibpi" path="res://Prefabs/ExplosionProjectileMiss.tscn" id="3_41gvk"]
 [ext_resource type="Script" uid="uid://dpy2g3m5p703" path="res://Scripts/StartAnimationIdle.cs" id="6_1vl50"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1lhm"]
@@ -47,6 +48,7 @@ radius = 3.0
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_41gvk")
 _VfxHit = ExtResource("2_u4kxt")
+_VfxMiss = ExtResource("3_41gvk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

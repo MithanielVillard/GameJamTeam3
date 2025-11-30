@@ -1,38 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://dke8bvhmfibpi"]
+[gd_scene load_steps=12 format=3 uid="uid://dmsslyn45vb81"]
 
-[ext_resource type="Texture2D" uid="uid://3hnku5ohavdd" path="res://Assets/Sprites/bOOM.png" id="2_eqoy0"]
-[ext_resource type="Script" uid="uid://dwvfsnyx21rtx" path="res://Scripts/VfxAnimated.cs" id="2_q7mpf"]
+[ext_resource type="Texture2D" uid="uid://3hnku5ohavdd" path="res://Assets/Sprites/bOOM.png" id="1_1u6nd"]
+[ext_resource type="Script" uid="uid://dwvfsnyx21rtx" path="res://Scripts/VfxAnimated.cs" id="2_awoxv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqarh"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw34y"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcnvo"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7hlw"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogqsf"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ga41f"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40h5u"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohble"]
-atlas = ExtResource("2_eqoy0")
+atlas = ExtResource("1_1u6nd")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b1lhm"]
@@ -72,4 +72,4 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_b1lhm")
 frame = 7
 frame_progress = 1.0
-script = ExtResource("2_q7mpf")
+script = ExtResource("2_awoxv")
