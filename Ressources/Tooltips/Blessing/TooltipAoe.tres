@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://cp6o2a5jckvtt"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_bggyf"]
+
+[resource]
+script = ExtResource("1_bggyf")
+Title = "Aoe"
+Description = "+ 5 Projectile Range
+[url=Stats/ProjectileRange][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

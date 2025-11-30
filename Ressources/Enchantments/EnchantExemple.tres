@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_8jaql")
 Name = "Enchant example"
-CardStatEffects = null
+EnchantmentPlayerStatEffects = null
+EnchantmentWandStatEffects = null
 metadata/_custom_type_script = "uid://bgrl57kb67hht"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://xrik8pwta2fe"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_51cww"]
+
+[resource]
+script = ExtResource("1_51cww")
+Title = "Life Tree Blessing"
+Description = "+ 50 Max Health
+[url=Stats/MaxHealth][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://cdyny8ime6hw3"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_4n0a2"]
+
+[resource]
+script = ExtResource("1_4n0a2")
+Title = "Multi Incantation"
+Description = "+ 3 Projectiles Number
+[url=Stats/ProjectileNumber][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

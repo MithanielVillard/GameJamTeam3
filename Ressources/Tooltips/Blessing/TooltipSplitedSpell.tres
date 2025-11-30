@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://cuvp7o3ijl6v"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_0iv5w"]
+
+[resource]
+script = ExtResource("1_0iv5w")
+Title = "SplitedSpell"
+Description = "For the total 4 attack damage,  you earn 1 projectile 
+[url=Stats/ProjectileNumber][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

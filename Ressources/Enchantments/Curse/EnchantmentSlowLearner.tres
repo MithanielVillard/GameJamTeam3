@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://dyurvmq47mf6p"]
+
+[ext_resource type="Script" uid="uid://biarpqaqkn2mf" path="res://Scripts/Enchantment/EnchantmentSlowLearner.cs" id="1_g1jui"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_v7vi0"]
+
+[resource]
+script = ExtResource("1_v7vi0")
+Name = "Slow Learner"
+Description = "for every successive attack  drop Attack Damage by 5  "
+Categories = 1
+EnchantmentPlayerStatEffects = null
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_g1jui")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

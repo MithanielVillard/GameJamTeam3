@@ -5,10 +5,10 @@ namespace GameJamTeam3.Scripts;
 
 public partial class Wand : Node2D
 {
-	[Export]private int _attackDamage;
-	[Export]private int _projectileNumber;
-	[Export]private int _projectileRange;
-	[Export]private int _projectileSpeed;
+	[Export]private int _attackDamage = 10;
+	[Export]private int _projectileNumber = 1;
+	[Export]private int _projectileRange = 5;
+	[Export]private int _projectileSpeed = 2;
 	
 	[Export]private PackedScene _projectileScene;
 	

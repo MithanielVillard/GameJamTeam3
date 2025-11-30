@@ -5,20 +5,20 @@ using GameJamTeam3.Scripts.Enums;
 
 public partial class Player : Node2D
 {
-	[Export]private int _healthRegen = 0;
-	[Export]private int _maxHealth = 100;
-	[Export]private int _health = 100;
-	[Export]private int _luck = 15;
-	[Export]private int _defense = 50;
-	[Export]private float _attackSpeed = 2;
-	[Export]private int _movementSpeed = 10;
+	[Export]public int _healthRegen = 0;
+	[Export]public int _maxHealth = 100;
+	[Export]public int _health = 100;
+	[Export]public int _luck = 15;
+	[Export]public int _defense = 50;
+	[Export]public float _attackSpeed = 2;
+	[Export]public int _movementSpeed = 10;
 
 	private float lastTimeFired = 0;
 	private float processedAttackSpeed = 0;
 	private bool _isTryingFire;
 	
 	private PlayerMovement _movementScript;
-	private Wand _playerwand;
+	public Wand PlayerWand;
 
 	
 	// -=========- SIGNALS FOR ENCHANTMENTS -==========-
@@ -35,7 +35,7 @@ public partial class Player : Node2D
 		_movementScript = GetChild<GameJamTeam3.Scripts.PlayerMovement>(0);
 		_movementScript.SetMovementSpeed(_movementSpeed);
 		
-		_playerwand = _movementScript.GetChild<GameJamTeam3.Scripts.Wand>(0);
+		PlayerWand = _movementScript.GetChild<GameJamTeam3.Scripts.Wand>(0);
 
 		ProccesAttackSpeed();
 	}

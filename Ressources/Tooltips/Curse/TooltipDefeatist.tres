@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://b8rijjfwgd6vw"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_6jnrg"]
+
+[resource]
+script = ExtResource("1_6jnrg")
+Title = "Defeatist"
+Description = "When you take damage Defense decrease by 5
+[url=Stats/Defense][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

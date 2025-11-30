@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://cgwki8gupa3ip"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_i6xr5"]
+
+[resource]
+script = ExtResource("1_i6xr5")
+Title = "Wand Stats"
+Description = "Attack Damage : [hr] 
+The number of your deal damage of your spells
+[/hr]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

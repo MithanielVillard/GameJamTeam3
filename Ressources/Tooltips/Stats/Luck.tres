@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://dcc2614apuo36"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_4e0bu"]
+
+[resource]
+script = ExtResource("1_4e0bu")
+Title = "PlayerStats"
+Description = "Luck : [hr] 
+The player's luck. Higher luck increases the likelihood of more attractive bonuses.
+[/hr]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

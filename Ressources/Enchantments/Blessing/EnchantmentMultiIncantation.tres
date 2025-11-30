@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://cg2v5qhc5wjvl"]
+
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_ibcgc"]
+[ext_resource type="Script" uid="uid://dncplks31pmmh" path="res://Scripts/EnchantmentWandStatsEffect.cs" id="1_t2nwm"]
+
+[sub_resource type="Resource" id="Resource_sbaec"]
+script = ExtResource("1_t2nwm")
+Stat = 1
+StatValue = 3
+metadata/_custom_type_script = "uid://dncplks31pmmh"
+
+[resource]
+script = ExtResource("1_ibcgc")
+Name = "Multi Incantation"
+Description = "+ 3 Projectile Number "
+EnchantmentPlayerStatEffects = Array[Object]([])
+EnchantmentWandStatEffects = Array[Object]([SubResource("Resource_sbaec")])
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

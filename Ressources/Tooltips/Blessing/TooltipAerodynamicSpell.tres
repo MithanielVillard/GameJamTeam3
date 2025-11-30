@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://h8qt65s4kcap"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_o18c5"]
+
+[resource]
+script = ExtResource("1_o18c5")
+Title = "AerodynamicSpell"
+Description = "+ 5 Projectile Speed
+[url=Stats/ProjectileSpeed][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

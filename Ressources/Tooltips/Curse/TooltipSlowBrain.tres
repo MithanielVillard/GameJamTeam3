@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://j0wndp6fr73o"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_tnyi8"]
+
+[resource]
+script = ExtResource("1_tnyi8")
+Title = "Slow Brain"
+Description = "- 20 Attack Speed   
+[url=Stats/AttackSpeed][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

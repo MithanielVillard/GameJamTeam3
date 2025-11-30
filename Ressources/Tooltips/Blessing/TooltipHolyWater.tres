@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://uqgcck0pdi16"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_jsytb"]
+
+[resource]
+script = ExtResource("1_jsytb")
+Title = "Holy Water"
+Description = "+ 50% Health
+[url=Stats/Health][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

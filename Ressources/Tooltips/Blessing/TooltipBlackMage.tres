@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://dob86hejm57x5"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_0ccvp"]
+
+[resource]
+script = ExtResource("1_0ccvp")
+Title = "Black Mage"
+Description = "For N curse you have + 2 Luck 
+[url=Stats/Luck][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

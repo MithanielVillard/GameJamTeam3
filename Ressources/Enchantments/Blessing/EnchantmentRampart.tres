@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://bmo3bs5742rh8"]
+
+[ext_resource type="Script" uid="uid://dcce2qcb7t1y8" path="res://Scripts/EnchantmentPlayerStatsEffect.cs" id="1_1voyx"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_3alup"]
+
+[sub_resource type="Resource" id="Resource_k4c4i"]
+script = ExtResource("1_1voyx")
+Stat = 4
+StatValue = 35
+metadata/_custom_type_script = "uid://dcce2qcb7t1y8"
+
+[resource]
+script = ExtResource("1_3alup")
+Name = "Rampart"
+Description = "+ 35 Defense"
+EnchantmentPlayerStatEffects = Array[Object]([SubResource("Resource_k4c4i")])
+EnchantmentWandStatEffects = null
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

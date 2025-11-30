@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://bnoawk8biq06"]
+
+[ext_resource type="Script" uid="uid://er7du1cfgbrm" path="res://Scripts/Enchantment/EnchantmentBestialFury.cs" id="1_fk1ry"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_qeaht"]
+
+[resource]
+script = ExtResource("1_qeaht")
+Name = "Bestial Fury"
+Description = "The Attack Speed  is increase based on successive attacks."
+EnchantmentPlayerStatEffects = Array[Object]([])
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_fk1ry")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

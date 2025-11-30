@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://c21rn71jff6er"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_16o1a"]
+
+[resource]
+script = ExtResource("1_16o1a")
+Title = "Rampart"
+Description = "+ 35 Defense
+[url=Stats/Defense][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

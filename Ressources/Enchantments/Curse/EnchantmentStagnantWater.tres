@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://c1guipwrpo53p"]
+
+[ext_resource type="Script" uid="uid://dcce2qcb7t1y8" path="res://Scripts/EnchantmentPlayerStatsEffect.cs" id="1_07f54"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_vd4t6"]
+
+[sub_resource type="Resource" id="Resource_62e8m"]
+script = ExtResource("1_07f54")
+Stat = 2
+Operator = 2
+StatValue = 50
+OperationUnit = 1
+metadata/_custom_type_script = "uid://dcce2qcb7t1y8"
+
+[resource]
+script = ExtResource("1_vd4t6")
+Name = "Stagnant Water"
+Description = " 50% Health"
+Categories = 1
+EnchantmentPlayerStatEffects = Array[Object]([SubResource("Resource_62e8m")])
+EnchantmentWandStatEffects = null
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

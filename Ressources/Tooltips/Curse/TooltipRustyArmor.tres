@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://j2sc1ly28vx5"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_lf816"]
+
+[resource]
+script = ExtResource("1_lf816")
+Title = "Rusty Armor"
+Description = "- 35 Defense 
+[url=Stats/Defense][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

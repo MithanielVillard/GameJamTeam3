@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://qeqgvtfmb66n"]
+[gd_scene load_steps=2 format=3 uid="uid://qeqgvtfmb66n"]
+
+[ext_resource type="PackedScene" uid="uid://dhk71017nj7jf" path="res://Prefabs/Tooltip.tscn" id="1_pux0s"]
 
 [node name="Liam" type="Node2D"]
+
+[node name="PanelContainer" parent="." instance=ExtResource("1_pux0s")]
+clip_contents = true
+Title = "Berserker"
+Description = "The [rainbow] Attack Damage [/rainbow] is increasebased on successive attacks [url=TestTooltip.tres]Clicker clicker bande salope[/url]"

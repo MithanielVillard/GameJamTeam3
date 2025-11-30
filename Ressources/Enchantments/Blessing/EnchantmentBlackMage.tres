@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://cnq18pd03sf8m"]
+
+[ext_resource type="Script" uid="uid://bwnnjodd5v86b" path="res://Scripts/Enchantment/EnchantmentBlackMage.cs" id="1_cpjcx"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_mg55x"]
+
+[resource]
+script = ExtResource("1_mg55x")
+Name = "Black Mage"
+Description = "For all futur stats malus you have + 2 @Luck "
+EnchantmentPlayerStatEffects = null
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_cpjcx")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

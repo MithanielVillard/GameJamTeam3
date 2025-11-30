@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://cn0qfcxxm8dyy"]
+
+[ext_resource type="Script" uid="uid://crx2wv580knmf" path="res://Scripts/Enchantment/EnchantmentMasochistic.cs" id="1_8hpg6"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_j6rf8"]
+
+[resource]
+script = ExtResource("1_j6rf8")
+Name = "Masochistic"
+Description = "When you take damage your Defense increase"
+EnchantmentPlayerStatEffects = null
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_8hpg6")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

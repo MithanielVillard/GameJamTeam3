@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://djiev8pd3yiik"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_ykw63"]
+
+[resource]
+script = ExtResource("1_ykw63")
+Title = "StagnantWater"
+Description = " - 50% Health
+[url=Stats/Health][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

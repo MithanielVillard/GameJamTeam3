@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://c26d5b1h1qq3e"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_xeum1"]
+
+[resource]
+script = ExtResource("1_xeum1")
+Title = "Slow Learner"
+Description = "For each successive attack,  drop Attack Damage by  1   
+[url=Stats/AttackDamage][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

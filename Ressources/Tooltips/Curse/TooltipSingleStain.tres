@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://dcwjh30o17tdo"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_1t0uu"]
+
+[resource]
+script = ExtResource("1_1t0uu")
+Title = "SingleStain"
+Description = "- 3 Projectiles Number
+[url=Stats/ProjectileNumber][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

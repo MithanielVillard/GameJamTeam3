@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://dbod2jp6x6gq7"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_116st"]
+
+[resource]
+script = ExtResource("1_116st")
+Title = "PlayerStats"
+Description = "Health : [hr] 
+Health points, you die at 0
+[/hr]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

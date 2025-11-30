@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://biog6isfha0x1"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_i8xli"]
+
+[resource]
+script = ExtResource("1_i8xli")
+Title = "Loaded Dice"
+Description = "+ 15 Luck
+[url=Stats/Luck][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

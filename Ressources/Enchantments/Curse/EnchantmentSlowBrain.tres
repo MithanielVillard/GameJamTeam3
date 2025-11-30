@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://c5v6hhiv18eh7"]
+
+[ext_resource type="Script" uid="uid://dcce2qcb7t1y8" path="res://Scripts/EnchantmentPlayerStatsEffect.cs" id="1_e0j1j"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_gersy"]
+
+[sub_resource type="Resource" id="Resource_dgxjs"]
+script = ExtResource("1_e0j1j")
+Stat = 5
+Operator = 1
+StatValue = 10
+metadata/_custom_type_script = "uid://dcce2qcb7t1y8"
+
+[resource]
+script = ExtResource("1_gersy")
+Name = "Slow Brain"
+Description = "- 10 Attack Speed"
+Categories = 1
+EnchantmentPlayerStatEffects = Array[Object]([SubResource("Resource_dgxjs")])
+EnchantmentWandStatEffects = null
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

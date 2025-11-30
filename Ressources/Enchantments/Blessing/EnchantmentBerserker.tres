@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://g1kvn3ntp4tm"]
+
+[ext_resource type="Script" uid="uid://bssss7albyefa" path="res://Scripts/Enchantment/EnchantmentBerserker.cs" id="1_2m661"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="2_1ytmt"]
+
+[resource]
+script = ExtResource("2_1ytmt")
+Name = "Berserker"
+Description = "The Attack Damage is increase based on successive attacks."
+EnchantmentPlayerStatEffects = Array[Resource]([])
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_2m661")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

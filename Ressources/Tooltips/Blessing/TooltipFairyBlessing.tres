@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://b53mn10vbuuid"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_jvlwx"]
+
+[resource]
+script = ExtResource("1_jvlwx")
+Title = "Fairy Blessing"
+Description = "+ 5 Helath Regeneration
+[url=Stats/HealthRegeneration][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

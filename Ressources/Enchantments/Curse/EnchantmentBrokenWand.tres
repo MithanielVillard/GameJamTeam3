@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://c77g15deudn00"]
+
+[ext_resource type="Script" uid="uid://dncplks31pmmh" path="res://Scripts/EnchantmentWandStatsEffect.cs" id="1_7txn4"]
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_oy714"]
+
+[sub_resource type="Resource" id="Resource_7tgwo"]
+script = ExtResource("1_7txn4")
+Operator = 1
+StatValue = 20
+metadata/_custom_type_script = "uid://dncplks31pmmh"
+
+[resource]
+script = ExtResource("1_oy714")
+Name = "Broken Wand"
+Description = "- 20 Attack Damage"
+Categories = 1
+EnchantmentPlayerStatEffects = null
+EnchantmentWandStatEffects = Array[Object]([SubResource("Resource_7tgwo")])
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

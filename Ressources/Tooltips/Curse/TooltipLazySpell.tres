@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://dfniwm2toftrl"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_0jrki"]
+
+[resource]
+script = ExtResource("1_0jrki")
+Title = "LazySpell"
+Description = "- 10 Projectile Speed
+[url=Stats/ProjectileSpeed][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

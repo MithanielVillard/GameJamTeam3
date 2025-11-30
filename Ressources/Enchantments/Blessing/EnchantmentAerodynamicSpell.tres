@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://cjxd1peo3p2mm"]
+
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_fpkhx"]
+[ext_resource type="Script" uid="uid://dncplks31pmmh" path="res://Scripts/EnchantmentWandStatsEffect.cs" id="1_fyq8m"]
+
+[sub_resource type="Resource" id="Resource_okstk"]
+script = ExtResource("1_fyq8m")
+Stat = 3
+StatValue = 5
+metadata/_custom_type_script = "uid://dncplks31pmmh"
+
+[resource]
+script = ExtResource("1_fpkhx")
+Name = "Aerodynamic spell"
+Description = " + 5 Projectile Speed"
+EnchantmentPlayerStatEffects = Array[Object]([])
+EnchantmentWandStatEffects = Array[Object]([SubResource("Resource_okstk")])
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

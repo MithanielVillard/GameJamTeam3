@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=4 format=3 uid="uid://dr4klku2djti7"]
+
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_i8520"]
+[ext_resource type="Script" uid="uid://dcce2qcb7t1y8" path="res://Scripts/EnchantmentPlayerStatsEffect.cs" id="1_pqgjn"]
+
+[sub_resource type="Resource" id="Resource_qaxw5"]
+script = ExtResource("1_pqgjn")
+Stat = 3
+Operator = 3
+StatValue = 3
+metadata/_custom_type_script = "uid://dcce2qcb7t1y8"
+
+[resource]
+script = ExtResource("1_i8520")
+Name = "Loaded Dice"
+Description = "* 3 Luck"
+EnchantmentPlayerStatEffects = Array[Object]([SubResource("Resource_qaxw5")])
+EnchantmentWandStatEffects = null
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

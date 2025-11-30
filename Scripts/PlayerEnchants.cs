@@ -17,10 +17,13 @@ public partial class PlayerEnchants : Node2D
 
     public void AddEnchantments(Enchantment enchantment)
     {
-        foreach (var statEffect in enchantment.EnchantmentStatEffects)
+        foreach (var statEffect in enchantment.EnchantmentPlayerStatEffects)
             _player.SetPlayerStats(statEffect.Stat, statEffect.Operator, statEffect.OperationUnit, statEffect.StatValue);
-        
-        enchantment.EnchantmentEffectScript?.OnEffectAdded(_player);
+
+        foreach (var statEffect in enchantment.EnchantmentWandStatEffects)
+            _player.PlayerWand.SetWandStats(statEffect.Stat, statEffect.Operator, statEffect.OperationUnit, statEffect.StatValue);
+
+         enchantment.EnchantmentEffectScript?.OnEffectAdded(_player);
         EnchantmentsHistory.Add(enchantment);
     }
 }

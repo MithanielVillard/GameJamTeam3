@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://bl1mnnbpstnxu"]
+
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_1n170"]
+[ext_resource type="Script" uid="uid://dyckqctcnkfn0" path="res://Scripts/Enchantment/EnchantmentSplitedSpell.cs" id="1_pecks"]
+
+[resource]
+script = ExtResource("1_1n170")
+Name = "Splited Spell"
+Description = "For the total 4 attack damage,  you earn 1 projectile "
+EnchantmentPlayerStatEffects = null
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_pecks")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

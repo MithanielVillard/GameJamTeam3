@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enchantment" load_steps=3 format=3 uid="uid://d4b0l6fr4bew3"]
+
+[ext_resource type="Script" uid="uid://bgrl57kb67hht" path="res://Scripts/Enchantment.cs" id="1_8ctny"]
+[ext_resource type="Script" uid="uid://b4ut4npaenamp" path="res://Scripts/Enchantment/EnchantmentDefeastist.cs" id="1_j3bvw"]
+
+[resource]
+script = ExtResource("1_8ctny")
+Name = "Defeatist"
+Description = "When you take damage Defense Decrease by  5"
+Categories = 1
+EnchantmentPlayerStatEffects = Array[Object]([])
+EnchantmentWandStatEffects = null
+EnchantmentEffectScript = ExtResource("1_j3bvw")
+metadata/_custom_type_script = "uid://bgrl57kb67hht"

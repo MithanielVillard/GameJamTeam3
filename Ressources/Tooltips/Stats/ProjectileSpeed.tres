@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://dfop8pvfk062q"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_lvafv"]
+
+[resource]
+script = ExtResource("1_lvafv")
+Title = "Wand Stats"
+Description = "Projectile Speed : [hr] 
+The speed of your spell
+[/hr]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

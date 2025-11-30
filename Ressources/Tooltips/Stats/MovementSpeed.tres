@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://bsjlh5s0u5ymj"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_lfl4r"]
+
+[resource]
+script = ExtResource("1_lfl4r")
+Title = "PlayerStats"
+Description = "Movement Speed : [hr] 
+Speed of your character
+[/hr]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

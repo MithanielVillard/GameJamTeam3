@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://cr1qpvhvv1u18"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_pbo38"]
+
+[resource]
+script = ExtResource("1_pbo38")
+Title = "BestialFury"
+Description = "The Attack Speed  is increase based on successive attacks.
+[url=Stats/AttackSpeed][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"

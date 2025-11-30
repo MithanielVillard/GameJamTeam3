@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tooltip" load_steps=2 format=3 uid="uid://cc8j0ye6h7wg8"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_sbt2m"]
+
+[resource]
+script = ExtResource("1_sbt2m")
+Title = "Masochistic"
+Description = "When you take damage your Defense increase
+[url=Stats/Defense][/url]"
+metadata/_custom_type_script = "uid://djx0ml503gkyd"
