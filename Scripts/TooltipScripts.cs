@@ -30,11 +30,11 @@ public partial class TooltipScripts : PanelContainer
 	}
 
 	[Export] public RichTextLabel TextLabelRef;
+	public bool _mouseInside = false;
 
 	private bool _hasChild = false;
-	private bool _mouseInside = false;
 	private TooltipScripts _parentTooltip;
-	private static List<TooltipScripts> s_allToolTips = new();
+	public static List<TooltipScripts> s_allToolTips = new();
 
 	private static Node _currentScene = null;
 
