@@ -1,3 +1,56 @@
-[gd_scene format=3 uid="uid://bmekld0vdq3ly"]
+[gd_scene load_steps=9 format=3 uid="uid://bmekld0vdq3ly"]
+
+[ext_resource type="PackedScene" uid="uid://cpru1wibojjkd" path="res://Prefabs/Tiles/lava-pond.tscn" id="2_3v5t7"]
+[ext_resource type="Script" uid="uid://b677s27d7l0og" path="res://Scripts/Dungeon.cs" id="2_gw5li"]
+[ext_resource type="Script" uid="uid://beqy0oi4nfyxo" path="res://Scripts/CharacterScript.cs" id="4_5o1px"]
+[ext_resource type="Script" uid="uid://bqhdmntjv1uld" path="res://Scripts/Resources/ResourceRoom.cs" id="4_lqcpu"]
+
+[sub_resource type="Resource" id="Resource_5o1px"]
+script = ExtResource("4_lqcpu")
+prefab = ExtResource("2_3v5t7")
+weight = 100
+metadata/_custom_type_script = "uid://bqhdmntjv1uld"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqi8s"]
+
+[sub_resource type="Gradient" id="Gradient_lqcpu"]
+colors = PackedColorArray(0, 1, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5o1px"]
+gradient = SubResource("Gradient_lqcpu")
 
 [node name="Mateo" type="Node2D"]
+
+[node name="Dungeon" type="Node2D" parent="."]
+script = ExtResource("2_gw5li")
+ROOMS = Array[Object]([SubResource("Resource_5o1px")])
+
+[node name="Entry" parent="Dungeon" instance=ExtResource("2_3v5t7")]
+firstRoom = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.1, 40)
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("4_5o1px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(13, 0.05)
+shape = SubResource("RectangleShape2D_iqi8s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-10, 0)
+texture = SubResource("GradientTexture1D_5o1px")
+
+[node name="Camera2D" type="Camera2D" parent="Area2D"]
+position = Vector2(-10, 0)
+scale = Vector2(5.5652184, 0.01388889)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_area_2d_body_exited"]
