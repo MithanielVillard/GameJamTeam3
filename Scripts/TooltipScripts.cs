@@ -33,10 +33,13 @@ public partial class TooltipScripts : PanelContainer
 	private bool _hasChild = false;
 	private bool _mouseInside = false;
 	private TooltipScripts _parentTooltip;
-	private static List<TooltipScripts> s_allToolTips = new List<TooltipScripts>();
+	private static List<TooltipScripts> s_allToolTips = new();
+
+	private static Node _currentScene = null;
 	
 	public override void _Ready()
 	{ 
+		_currentScene ??= GetTree().GetCurrentScene();
 		s_allToolTips.Add(this);
 		UpdateToolTip();
 
@@ -63,14 +66,19 @@ public partial class TooltipScripts : PanelContainer
 	private void _on_rich_text_label_meta_hover_started(Variant meta)
 	{
 		if (_hasChild) return;
+		var node = OpenToolTip("res://Ressources/Tooltips/" + meta.AsString());
 		
-		Tooltip newTip = GD.Load<Tooltip>("res://Ressources/Tooltips/"+meta.AsString());
-		TooltipScripts node = newTip.CreateInstance();
-		GetTree().GetCurrentScene().AddChild(node);
 		_hasChild = true;
 		node._parentTooltip = this;
-		
 		ComputeNewToolTipPosition(node);
+	}
+
+	public static TooltipScripts OpenToolTip(string path)
+	{
+		Tooltip newTip = GD.Load<Tooltip>(path);
+		TooltipScripts node = newTip.CreateInstance();
+		_currentScene.AddChild(node);
+		return node;
 	}
 
 	private void OnHoverLeave()

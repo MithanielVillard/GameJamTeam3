@@ -4,11 +4,11 @@
 
 [node name="Mithaniel" type="Node2D"]
 
-[node name="PanelContainer" parent="." instance=ExtResource("1_2yxh4")]
+[node name="Tooltip" parent="." instance=ExtResource("1_2yxh4")]
 offset_left = 26.0
 offset_top = 16.0
 offset_right = 48.0
 offset_bottom = 31.0
-Title = "(curse) wheelchair"
-Description = "Ceci est un test [url=TestTooltip.tres]CLICK ME[/url]            efefwefwec
-wecwecwec"
+Title = "(curse) [shake]wheelchair[/shake]"
+Description = "Ceci est un tes[rainbow] [url=TestTooltip.tres]CLICK ME[/url][/rainbow] 
+[hr]"
