@@ -1,3 +1,47 @@
-[gd_scene format=3 uid="uid://c7yuc6r8jgora"]
+[gd_scene load_steps=5 format=3 uid="uid://c7yuc6r8jgora"]
+
+[ext_resource type="PackedScene" uid="uid://dhk71017nj7jf" path="res://Prefabs/Tooltip.tscn" id="1_2yxh4"]
+[ext_resource type="PackedScene" uid="uid://80rrf8mkhqi1" path="res://Assets/Models/Card.glb" id="2_afibi"]
+[ext_resource type="Script" uid="uid://1omhkr7pgcrv" path="res://Scripts/Card.cs" id="2_afs6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_afibi"]
+size = Vector3(1.4508667, 1.9960938, 0.065208435)
 
 [node name="Mithaniel" type="Node2D"]
+
+[node name="Tooltip" parent="." instance=ExtResource("1_2yxh4")]
+visible = false
+offset_left = 26.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 31.0
+Title = "(curse) [shake]wheelchair[/shake]"
+Description = "Ceci est un tes[rainbow] [url=TestTooltip.tres]CLICK ME[/url][/rainbow] 
+[hr]"
+
+[node name="Card" type="Node3D" parent="."]
+script = ExtResource("2_afs6x")
+
+[node name="Area3D" type="Area3D" parent="Card"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Card/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003753662, 0.0009765625, -0.019115448)
+shape = SubResource("BoxShape3D_afibi")
+
+[node name="CardModel" parent="Card" instance=ExtResource("2_afibi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.023909211)
+
+[node name="Label3D" type="Label3D" parent="Card"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21868257, 0.022522211)
+text = "Benediction"
+font_size = 23
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9444761)
+fov = 100.0
+size = 4.0
+
+[connection signal="input_event" from="Card/Area3D" to="Card" method="_on_area_3d_input_event"]

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dmjgljsbrgoek"]
+
+[ext_resource type="Script" uid="uid://djx0ml503gkyd" path="res://Scripts/Tooltip.cs" id="1_7pw6e"]
+
+[resource]
+script = ExtResource("1_7pw6e")
