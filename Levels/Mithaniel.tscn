@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://c7yuc6r8jgora"]
+[gd_scene load_steps=2 format=3 uid="uid://c7yuc6r8jgora"]
+
+[ext_resource type="PackedScene" uid="uid://dhk71017nj7jf" path="res://Prefabs/Tooltip.tscn" id="1_2yxh4"]
 
 [node name="Mithaniel" type="Node2D"]
+
+[node name="Tooltip" parent="." instance=ExtResource("1_2yxh4")]
+offset_left = 26.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 31.0
+Title = "(curse) [shake]wheelchair[/shake]"
+Description = "Ceci est un tes[rainbow] [url=TestTooltip.tres]CLICK ME[/url][/rainbow] 
+[hr]"
