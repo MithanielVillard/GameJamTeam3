@@ -1,12 +1,12 @@
 ﻿namespace GameJamTeam3.Scripts.Enums;
 
-public enum Stats
+public enum StatsPlayer
 {
     HEALTH_REGEN,
     MAX_HEALTH,
+    HEALTH,
     LUCK,
     DEFENSE,
-    ATTACK_DAMAGE,
     ATTACK_SPEED,
-    HEALTH
+    MOVEMENT_SPEED
 }

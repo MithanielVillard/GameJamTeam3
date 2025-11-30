@@ -1,0 +1,38 @@
+<<<<<<< Updated upstream
+[gd_scene load_steps=6 format=3 uid="uid://cqcqmwtl7erc5"]
+
+[ext_resource type="Script" uid="uid://b1tc51av0p7vs" path="res://Scripts/PlayerMovement.cs" id="1_y5hcb"]
+[ext_resource type="Texture2D" uid="uid://d08q5rvm1rkfh" path="res://icon.svg" id="1_y6xdh"]
+[ext_resource type="Script" uid="uid://cb3skw2u0862t" path="res://Scripts/Orientation.cs" id="2_2nftw"]
+[ext_resource type="Texture2D" uid="uid://cd4xj83kkuq0w" path="res://Assets/Sprites/dir.png" id="2_y5hcb"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://130r2ne1h5u4"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_y5hcb"]
+[ext_resource type="Texture2D" uid="uid://d08q5rvm1rkfh" path="res://icon.svg" id="1_y6xdh"]
+[ext_resource type="Script" path="res://Scripts/Orientation.cs" id="2_2nftw"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/dir.png" id="2_y5hcb"]
+>>>>>>> Stashed changes
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_am1e7"]
+radius = 32.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_y5hcb")
+
+[node name="Direction" type="Node2D" parent="."]
+position = Vector2(0, 60)
+scale = Vector2(1, 0.5)
+script = ExtResource("2_2nftw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Direction"]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_y5hcb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y6xdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 33)
+shape = SubResource("CircleShape2D_am1e7")
