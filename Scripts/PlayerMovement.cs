@@ -1,14 +1,21 @@
 using Godot;
-using System;
+
+namespace GameJamTeam3.Scripts;
 
 public partial class PlayerMovement : CharacterBody2D
 {
 	public float ActualSpeed = 60.0f;
 	
-	private PlayerAnimation animationPlayer;
+	private PlayerAnimation _animationPlayer;
+	private Player _player;
 	
 	[Signal] public delegate void MovementDirectionEventHandler(Vector2 dir);
-	
+
+	public override void _Ready()
+	{
+		_player = GetParent<Player>();
+	}
+
 	public void SetMovementSpeed(float speed)
 	{
 		ActualSpeed = speed;
@@ -20,15 +27,16 @@ public partial class PlayerMovement : CharacterBody2D
 
 		if (direction != Vector2.Zero)
 		{
-			this.Velocity = direction.Normalized() * ActualSpeed;
+			Velocity = direction.Normalized() * ActualSpeed;
+			_player.EmitSignal(Player.SignalName.Move);
 		}
 		else
 		{
-			this.Velocity = Vector2.Zero;
+			Velocity = Vector2.Zero;
+			_player.EmitSignal(Player.SignalName.Idle);
 		}
 		
 		EmitSignal(SignalName.MovementDirection,  direction);
-		
 		MoveAndSlide();
 	}
 }

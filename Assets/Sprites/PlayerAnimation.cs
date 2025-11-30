@@ -4,11 +4,11 @@ using System;
 public partial class PlayerAnimation : AnimatedSprite2D
 {
 
-	private PlayerMovement _playerMovement;
+	private GameJamTeam3.Scripts.PlayerMovement _playerMovement;
 	
 	public override void _Ready()
 	{
-		_playerMovement = GetParent<PlayerMovement>();
+		_playerMovement = GetParent<GameJamTeam3.Scripts.PlayerMovement>();
 		
 		_playerMovement.MovementDirection += HandleDirection;
 

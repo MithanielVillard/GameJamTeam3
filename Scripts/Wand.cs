@@ -1,7 +1,7 @@
-using Godot;
-using System;
-using System.Diagnostics;
 using GameJamTeam3.Scripts.Enums;
+using Godot;
+
+namespace GameJamTeam3.Scripts;
 
 public partial class Wand : Node2D
 {

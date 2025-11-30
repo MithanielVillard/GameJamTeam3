@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GameJamTeam3.Scripts;
 using GameJamTeam3.Scripts.Enums;
 
 public partial class Player : Node2D
@@ -18,15 +19,23 @@ public partial class Player : Node2D
 	
 	private PlayerMovement _movementScript;
 	private Wand _playerwand;
+
 	
+	// -=========- SIGNALS FOR ENCHANTMENTS -==========-
+	[Signal] public delegate void StatChangedEventHandler(StatsPlayer statChanged);
 	[Signal] public delegate void FireProjectileEventHandler();
+	[Signal] public delegate void MoveEventHandler();
+	[Signal] public delegate void IdleEventHandler();
+	[Signal] public delegate void EnchantmentReceivedEventHandler(Enchantment enchantmentReceived);
+	
+	// -=========- SIGNALS FOR ENCHANTMENTS -==========-
 	
 	public override void _Ready()
 	{
-		_movementScript = GetChild<PlayerMovement>(0);
+		_movementScript = GetChild<GameJamTeam3.Scripts.PlayerMovement>(0);
 		_movementScript.SetMovementSpeed(_movementSpeed);
 		
-		_playerwand = _movementScript.GetChild<Wand>(0);
+		_playerwand = _movementScript.GetChild<GameJamTeam3.Scripts.Wand>(0);
 
 		ProccesAttackSpeed();
 	}
