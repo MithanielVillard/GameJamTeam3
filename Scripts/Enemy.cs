@@ -18,7 +18,7 @@ public partial class Enemy : Node2D
 		_movementScript = GetChild<EnemyMovement>(0);
 		_movementScript.SetMovementSpeed(_movementSpeed);
 
-		_player = GetParent().GetChild<Player>(2);
+		_player = GetParent().GetChild<Player>(1);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

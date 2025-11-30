@@ -3,8 +3,6 @@ using System;
 
 public partial class Projectile : Area2D
 {
-	
-	
 	private float _speed;
 	private int _damage;
 	
