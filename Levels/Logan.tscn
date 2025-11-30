@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://20otq3xvxy6"]
+[gd_scene load_steps=36 format=3 uid="uid://20otq3xvxy6"]
 
 [ext_resource type="Texture2D" uid="uid://b0fvrrdfoptkw" path="res://Assets/Sprites/tilehigh.png" id="1_8yhr8"]
 [ext_resource type="Texture2D" uid="uid://dobhocnekj0be" path="res://Assets/Sprites/TileSheet.png" id="1_e120x"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c6ym0h7gelhtj" path="res://Assets/Sprites/MC Animation.png" id="8_6oblm"]
 [ext_resource type="Script" uid="uid://017pmyoak8d1" path="res://Assets/Sprites/PlayerAnimation.cs" id="9_y0iyu"]
 [ext_resource type="Script" uid="uid://d2mlfmo3jjyxq" path="res://Scripts/ArmsAnimation.cs" id="10_w5npr"]
+[ext_resource type="Script" uid="uid://1lxh6vr77pyq" path="res://Scripts/PlayerEnchants.cs" id="12_mqdx1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqdx1"]
 texture = ExtResource("1_8yhr8")
@@ -326,3 +327,6 @@ script = ExtResource("10_w5npr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Body"]
 position = Vector2(0, 33)
 shape = SubResource("CircleShape2D_am1e7")
+
+[node name="Enchants" type="Node2D" parent="Player"]
+script = ExtResource("12_mqdx1")
