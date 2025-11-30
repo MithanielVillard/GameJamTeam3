@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://m6wvj01jif6n"]
 
 [ext_resource type="Script" uid="uid://bxxqxcdayeuf5" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_obsy7"]
 [ext_resource type="Texture2D" uid="uid://cerx4vq72vu2y" path="res://Assets/Sprites/Projectile.png" id="2_xge1l"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://b4tky7xmlh68x"]
+
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_obsy7"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Projectile.png" id="2_xge1l"]
+>>>>>>> Stashed changes
 
 [node name="AtlasScene" type="Node"]
 script = ExtResource("1_obsy7")
