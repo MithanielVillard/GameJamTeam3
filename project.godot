@@ -20,18 +20,14 @@ config/icon="res://icon.svg"
 
 aseprite_executable_path="C:\\Users\\ldan\\Downloads\\Aseprite\\Aseprite\\Aseprite.exe"
 
-[debug]
-
-gdscript/warnings/enable=false
-
-[aseprite_importers]
-
-aseprite_executable_path="C:\\Users\\ldan\\Downloads\\Aseprite\\Aseprite\\Aseprite.exe"
-
 [autoload]
 
 EnchantmentManager="*res://Scripts/EnchantmentManager.cs"
 CursorSetter="*res://Scripts/CursorSetter.cs"
+
+[debug]
+
+gdscript/warnings/enable=false
 
 [display]
 
@@ -46,12 +42,17 @@ mouse_cursor/custom_image="uid://c0u2f26gs5a4k"
 
 project/assembly_name="GameJamTeam3"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg", "res://addons/shadernoiselib/plugin.cfg", "res://addons/sprite_cutter/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
 "res://Ressources/Enchantments/": "red",
 "res://Ressources/Tooltips/": "red"
 }
+enabled=PackedStringArray("res://addons/nklbdev.aseprite_importers/plugin.cfg", "res://addons/sprite_cutter/plugin.cfg")
 
 [input]
 
@@ -80,5 +81,3 @@ Attack={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(482, 20),"global_position":Vector2(491, 68),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
-
-

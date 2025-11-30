@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://20otq3xvxy6"]
+[gd_scene load_steps=44 format=3 uid="uid://20otq3xvxy6"]
 
 [ext_resource type="Texture2D" uid="uid://b0fvrrdfoptkw" path="res://Assets/Sprites/tilehigh.png" id="1_8yhr8"]
 [ext_resource type="Texture2D" uid="uid://dobhocnekj0be" path="res://Assets/Sprites/TileSheet.png" id="1_e120x"]
@@ -243,6 +243,85 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_am1e7"]
 radius = 32.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_75wlt"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg6b5"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldaxq"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft8jw"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8ck5"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp7hb"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyj0y"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd2hg"]
+atlas = ExtResource("8_6oblm")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yhr8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75wlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg6b5")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldaxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft8jw")
+}],
+"loop": false,
+"name": &"new_an",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8ck5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp7hb")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyj0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd2hg")
+}],
+"loop": false,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
 [node name="Logan" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -328,5 +407,12 @@ script = ExtResource("10_w5npr")
 position = Vector2(0, 33)
 shape = SubResource("CircleShape2D_am1e7")
 
-[node name="Enchants" type="Node2D" parent="Player"]
-script = ExtResource("12_mqdx1")
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Enemy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_8yhr8")
+animation = &"new_animation_1"
+frame = 1
+frame_progress = 1.0
