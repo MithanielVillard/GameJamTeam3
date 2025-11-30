@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Godot;
@@ -36,30 +37,36 @@ public partial class TooltipScripts : PanelContainer
 	private static List<TooltipScripts> s_allToolTips = new();
 
 	private static Node _currentScene = null;
+
+	private double elapsedTime;
+	private Vector2 startingPos;
 	
 	public override void _Ready()
-	{ 
+	{
+		startingPos = Position;
 		_currentScene ??= GetTree().GetCurrentScene();
 		s_allToolTips.Add(this);
 		UpdateToolTip();
 
-		PivotOffset = GetGlobalRect().GetCenter();
+		PivotOffset = GetRect().GetCenter();
 		
 		Tween tween = GetTree().CreateTween();
-		tween.TweenProperty(this, "scale", Vector2.One, 0.2f).SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.InOut);
+		tween.TweenProperty(this, "scale", new Vector2(0.4f, 0.4f), 0.15f).SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
 	}
 	
 	public override void _Process(double delta)
 	{
 		_mouseInside = GetGlobalRect().HasPoint(GetGlobalMousePosition());
+		Position = new Vector2(startingPos.X, startingPos.Y + (float) Mathf.Sin(elapsedTime) - 0.5f);
+		elapsedTime += delta;
 	}
 
 	private void UpdateToolTip()
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.Append("[center]" + _title + "[/center]\n");
-		sb.Append("[hr height=1 width=95/]\n");
-		sb.Append("[font_size=5]"+_description+"[/font_size]");
+		sb.Append("[hr height=1/]\n");
+		sb.Append("[font_size=10]"+_description+"[/font_size]");
 		TextLabelRef.Text = sb.ToString();
 	}
 
@@ -108,6 +115,6 @@ public partial class TooltipScripts : PanelContainer
 	private void ComputeNewToolTipPosition(TooltipScripts newToolTip)
 	{
 		//Always try to spawn right first
-		newToolTip.GlobalPosition = GetViewport().GetMousePosition() - new Vector2(3, 3);
+		newToolTip.startingPos = GetGlobalMousePosition() - new Vector2(10, 10);
 	}
 }
